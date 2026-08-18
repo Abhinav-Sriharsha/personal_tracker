@@ -1,6 +1,6 @@
 import { useLayoutEffect, useRef, useState } from "react";
 import type { DailyRecord } from "../types/DailyRecord";
-import { formatCompactDate, getForwardHeatmapDays, toDateKey, todayKey } from "../utils/dates";
+import { formatCompactDate, getForwardHeatmapDays, toDateKey } from "../utils/dates";
 import { xpBucket } from "../utils/xp";
 
 interface XPHeatmapProps {
@@ -14,11 +14,12 @@ const MIN_WEEKS = 1;
 const SIDE_RAIL_CELL_SIZE = 16;
 const SIDE_RAIL_CELL_GAP = 5;
 const BOTTOM_BREATHING_ROOM = 28;
+const HEATMAP_START_DATE = "2026-08-17";
 
 export function XPHeatmap({ records, selectedDate, onSelectDate }: XPHeatmapProps) {
   const shellRef = useRef<HTMLDivElement>(null);
   const [visibleWeeks, setVisibleWeeks] = useState(12);
-  const days = getForwardHeatmapDays(todayKey(), visibleWeeks);
+  const days = getForwardHeatmapDays(HEATMAP_START_DATE, visibleWeeks);
   const weeks: Date[][] = [];
 
   for (let index = 0; index < days.length; index += 7) {
@@ -75,7 +76,7 @@ export function XPHeatmap({ records, selectedDate, onSelectDate }: XPHeatmapProp
         </div>
       </div>
 
-      <div ref={shellRef} className="heatmapShell" role="grid" aria-label="Upcoming XP starting today">
+      <div ref={shellRef} className="heatmapShell" role="grid" aria-label="XP starting August 17">
         <div className="heatmap heatmap--vertical">
           {weeks.map((week, weekIndex) => (
             <div className="heatWeek" key={weekIndex}>

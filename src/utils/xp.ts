@@ -4,14 +4,14 @@ export const DAILY_XP_TARGET = 315;
 
 export const XP_VALUES = {
   tailoredApplications: 10,
-  quickApplications: 4,
-  linkedinOutreach: 1,
-  emails: 2,
+  quickApplications: 2,
+  linkedinOutreach: 3,
+  emails: 4,
   leetcodeDone: 20,
   leetcodeReviews: 5,
   pythonDone: 15,
   systemDesignDone: 15,
-  githubContributionDone: 10,
+  githubContributionDone: 5,
   prayerDone: 10,
 } as const;
 

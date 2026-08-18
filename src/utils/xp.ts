@@ -51,10 +51,11 @@ export function calculateXp(record: Pick<
 
 export function xpBucket(xp: number): number {
   if (xp <= 0) return 0;
-  if (xp < 150) return 1;
-  if (xp < 300) return 2;
-  if (xp < 500) return 3;
-  if (xp < 700) return 4;
+  const progress = xp / DAILY_XP_TARGET;
+  if (progress < 0.25) return 1;
+  if (progress < 0.5) return 2;
+  if (progress < 0.75) return 3;
+  if (progress < 1) return 4;
   return 5;
 }
 

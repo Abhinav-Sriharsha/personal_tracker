@@ -11,6 +11,8 @@ const CSV_HEADERS = [
   "leetcodeReviews",
   "pythonDone",
   "systemDesignDone",
+  "githubContributionDone",
+  "prayerDone",
   "customTasks",
   "customTaskXp",
   "xp",

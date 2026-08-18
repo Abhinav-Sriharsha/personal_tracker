@@ -32,13 +32,13 @@ const countTasks = [
   {
     field: "linkedinOutreach",
     title: "LinkedIn Outreach",
-    target: 300,
+    target: 50,
     quickAdds: [1, 5, 10],
   },
   {
     field: "emails",
     title: "Emails",
-    target: 75,
+    target: 25,
     quickAdds: [1, 5, 10],
   },
 ] as const;
@@ -130,12 +130,12 @@ export default function App() {
                 key={task.field}
                 field={task.field}
                 title={task.title}
-              value={selectedRecord[task.field]}
-              target={task.target}
-              xpEach={XP_VALUES[task.field]}
-              quickAdds={[...task.quickAdds]}
-              onChange={updateNumber}
-            />
+                value={selectedRecord[task.field]}
+                target={task.target}
+                xpEach={XP_VALUES[task.field]}
+                quickAdds={[...task.quickAdds]}
+                onChange={updateNumber}
+              />
             ))}
           </div>
 
@@ -173,6 +173,20 @@ export default function App() {
               detail="30 min"
               xp={XP_VALUES.systemDesignDone}
               checked={selectedRecord.systemDesignDone}
+              onChange={updateBoolean}
+            />
+            <BinaryTask
+              field="githubContributionDone"
+              title="GitHub Contribution"
+              xp={XP_VALUES.githubContributionDone}
+              checked={selectedRecord.githubContributionDone}
+              onChange={updateBoolean}
+            />
+            <BinaryTask
+              field="prayerDone"
+              title="Prayer"
+              xp={XP_VALUES.prayerDone}
+              checked={selectedRecord.prayerDone}
               onChange={updateBoolean}
             />
           </div>

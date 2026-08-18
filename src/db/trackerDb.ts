@@ -26,6 +26,8 @@ export function emptyRecord(date: string): DailyRecord {
     leetcodeReviews: 0,
     pythonDone: false,
     systemDesignDone: false,
+    githubContributionDone: false,
+    prayerDone: false,
     customTasks: [],
   };
 
@@ -50,6 +52,8 @@ export function normalizeRecord(record: Partial<DailyRecord> & { date: string })
     leetcodeDone: Boolean(base.leetcodeDone),
     pythonDone: Boolean(base.pythonDone),
     systemDesignDone: Boolean(base.systemDesignDone),
+    githubContributionDone: Boolean(base.githubContributionDone),
+    prayerDone: Boolean(base.prayerDone),
     customTasks: normalizeCustomTasks(base.customTasks),
   };
 

@@ -1,6 +1,6 @@
 import type { DailyRecord } from "../types/DailyRecord";
 
-export const DAILY_XP_TARGET = 710;
+export const DAILY_XP_TARGET = 380;
 
 export const XP_VALUES = {
   tailoredApplications: 10,
@@ -11,6 +11,8 @@ export const XP_VALUES = {
   leetcodeReviews: 5,
   pythonDone: 15,
   systemDesignDone: 15,
+  githubContributionDone: 10,
+  prayerDone: 10,
 } as const;
 
 export function calculateXp(record: Pick<
@@ -23,6 +25,8 @@ export function calculateXp(record: Pick<
   | "leetcodeReviews"
   | "pythonDone"
   | "systemDesignDone"
+  | "githubContributionDone"
+  | "prayerDone"
   | "customTasks"
 >): number {
   const customTaskXp = record.customTasks.reduce(
@@ -39,6 +43,8 @@ export function calculateXp(record: Pick<
     record.leetcodeReviews * XP_VALUES.leetcodeReviews +
     (record.pythonDone ? XP_VALUES.pythonDone : 0) +
     (record.systemDesignDone ? XP_VALUES.systemDesignDone : 0) +
+    (record.githubContributionDone ? XP_VALUES.githubContributionDone : 0) +
+    (record.prayerDone ? XP_VALUES.prayerDone : 0) +
     customTaskXp
   );
 }

@@ -15,6 +15,8 @@ export interface DailyRecord {
   leetcodeReviews: number;
   pythonDone: boolean;
   systemDesignDone: boolean;
+  githubContributionDone: boolean;
+  prayerDone: boolean;
   customTasks: CustomTask[];
   xp: number;
   updatedAt: string;
@@ -32,4 +34,6 @@ export type DailyRecordNumberField =
 export type DailyRecordBooleanField =
   | "leetcodeDone"
   | "pythonDone"
-  | "systemDesignDone";
+  | "systemDesignDone"
+  | "githubContributionDone"
+  | "prayerDone";

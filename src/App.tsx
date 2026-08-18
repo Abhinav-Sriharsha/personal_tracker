@@ -26,19 +26,19 @@ const countTasks = [
   {
     field: "quickApplications",
     title: "Quick / Good Applications",
-    target: 15,
+    target: 10,
     quickAdds: [1, 5],
   },
   {
     field: "linkedinOutreach",
     title: "LinkedIn Outreach",
-    target: 50,
+    target: 25,
     quickAdds: [1, 5, 10],
   },
   {
     field: "emails",
     title: "Emails",
-    target: 25,
+    target: 15,
     quickAdds: [1, 5, 10],
   },
 ] as const;

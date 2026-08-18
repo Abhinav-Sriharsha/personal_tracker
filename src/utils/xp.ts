@@ -1,6 +1,6 @@
 import type { DailyRecord } from "../types/DailyRecord";
 
-export const DAILY_XP_TARGET = 380;
+export const DAILY_XP_TARGET = 315;
 
 export const XP_VALUES = {
   tailoredApplications: 10,
